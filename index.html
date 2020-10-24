@@ -72,13 +72,13 @@
               In aliqua ea ullamco ad est ex non deserunt nulla. Consectetur sint ea aliquip aliquip consectetur voluptate est. Eu minim dolore laboris enim mollit voluptate irure esse aliquip.
             </p>
             <div class="about__images">
-              <button class="about__images-button about__images-button--prev" type="button" data-aos="fade-down"></button>
               <div class="about__images-wrapper">
                 <figure class="swiper-wrapper about__images-track">
                   <img class="swiper-slide about__image" src="images/slider-image-1.png" alt="" data-aos="fade-right" data-aos-duration="500">
                   <img class="swiper-slide about__image" src="images/slider-image-2.png" alt="" data-aos="fade-left" data-aos-duration="500">
                 </figure>
               </div>
+              <button class="about__images-button about__images-button--prev" type="button" data-aos="fade-down"></button>
               <button class="about__images-button about__images-button--next" type="button" data-aos="fade-down"></button>
             </div>
           </div>
@@ -143,12 +143,17 @@
   <script>
     AOS.init();
     const slider = new Swiper('.about__images-wrapper', {
-      slidesPerView: 2,
+      slidesPerView: 1,
       loop: true,
       spaceBetween: 34,
       navigation: {
         prevEl: '.about__images-button--prev',
         nextEl: '.about__images-button--next'
+      },
+      breakpoints: {
+        480: {
+          slidesPerView: 2
+        }
       }
     });
   </script>
